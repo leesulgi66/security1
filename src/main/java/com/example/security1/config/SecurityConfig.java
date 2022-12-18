@@ -34,6 +34,9 @@ public class SecurityConfig {
                 .loginProcessingUrl("/login") // /login 주소가 호출이 되면 시큐리티가 낚아채서 대신 로그인을 진행해 준다. -> 컨트롤러를 따로 생성하지 않아도 됨.
                 .defaultSuccessUrl("/")
                 //.usernameParameter("username2") // PrincipalDetailsService의 username의 파라미터이름을 바꿀 때 사용
+                .and()
+                .oauth2Login()
+                .loginPage("/loginForm") // 구글 로그인이 완료된 뒤의 후처리가 필요함.
                 .and().build();
     }
 }
