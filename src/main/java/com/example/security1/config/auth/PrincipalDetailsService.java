@@ -23,6 +23,7 @@ public class PrincipalDetailsService implements UserDetailsService {
         User userEntity = userRepository.findByUsername(username);
         if(userEntity != null) {
             return new PrincipalDetails(userEntity); //seseeion -> Authentication -> UserDetails -> User
+            // return 될 때 Authentication객체에 저장 됨.
         }
         return null;
     }
